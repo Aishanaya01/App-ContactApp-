@@ -11,4 +11,4 @@ const Container =({children,style}) =>{
     );
 };
 
-export default Container; 
+export default Container;

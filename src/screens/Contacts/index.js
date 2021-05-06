@@ -3,7 +3,7 @@ import {Text,View} from 'react-native'
 import Container from '../../components/common/Container';
 const Contacts=()=>{
     return (
-    <Container style={{padding:10}}>
+    <Container>
       <Text>Hello contacts</Text>
     </Container>
     )

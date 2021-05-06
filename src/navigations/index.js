@@ -8,19 +8,16 @@ import { GlobalContext } from '../context/Provider';
 
 
 const AppNavContainer=()=>{
-    // const {isLoggedIn} = true;
-    const {
-    authState:{isLoggedIn},
-     } = useContext(GlobalContext);
-    console.log('isLoggedIn:>>', isLoggedIn);
+    const{
+        authState: {isLoggedIn},
+    } = useContext(GlobalContext);
 
-return(
-<NavigationContainer>
-{isLoggedIn ? <DrawerNavigator/> : <AuthNavigator/>}
- 
-    </NavigationContainer>
-);
+    console.log('isLoggedIn :>> ', isLoggedIn);
+   return (
+       <NavigationContainer>
+   {isLoggedIn ? <DrawerNavigator/> : <AuthNavigator/>}
+   </NavigationContainer>
+   );
 };
-// screens >>>home>> drawer
-//screens>> auth>>
+
 export default AppNavContainer;
