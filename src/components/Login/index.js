@@ -14,8 +14,8 @@ const LoginComponent=()=>{
             <Image height="40" width="40" source={require('../../assets/images/logo.png')} style={styles.logoImage}/>
 
             <View>
-                <Text style={styles.title}>Welcome to HVContacts</Text>
-                <Text style={styles.subTitle}>Please Login here</Text>
+                <Text style={styles.title}>Welcome to  My Contacts</Text>
+                <Text style={styles.subTitle}>Please Login </Text>
            
            <View style={styles.form}>
             <Input
