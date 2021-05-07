@@ -3,16 +3,16 @@ import colors from '../../assets/theme/colors';
 
 export default StyleSheet.create({
     logoImage:{
-        height:150,
+        height:101,
         width:150,
         alignSelf:'center',
-        marginTop:50,
+        marginTop:60,
     },
     title:{
         fontSize:21,
         textAlign:'center',
-        paddingTop:20,
-        fontWeight:'500',
+        paddingTop:-90,
+        fontWeight:'400',
     },
     subTitle:{
         fontSize:21,

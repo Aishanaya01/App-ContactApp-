@@ -12,7 +12,7 @@ const RegisterComponent=({ onSubmit,onChange,form,loading,error,errors}) =>{
     const {navigate}=useNavigation();
     return(
         <Container>
-            <Image height="40" width="40" source={require('../../assets/images/logo.png')} style={styles.logoImage}/>
+            <Image height="30" width="30" source={require('../../assets/images/logo.png')} style={styles.logoImage}/>
 
             <View>
                 <Text style={styles.title}>Welcome to  AS Contacts</Text>
