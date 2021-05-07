@@ -1,4 +1,4 @@
-import { useNavigation } from '@react-navigation/core';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react'
 import {View,Text,TextInput,Image, TouchableOpacity} from 'react-native';
 import Container from '../../components/common/Container';
@@ -24,19 +24,19 @@ const RegisterComponent=({ onSubmit,onChange,form,loading,error,errors}) =>{
     label="Username"
     iconPosition="right"
     placeholder="Enter Username"
-    // error={errors.userName || error?.userName?.[0]}
-    // onChangeText={(value)=>{
-    //     onChange({name: 'userName',value});
-    // }}
+     error={errors.userName || error?.userName?.[0]}
+    onChangeText={(value)=>{
+         onChange({name: 'userName',value});
+    }}
     />
            <Input
     label="First name"
     iconPosition="right"
     placeholder="Enter First name"
-    // error={errors.firstName || error?.first_name?.[0]}
-    // onChangeText={(value)=>{
-    //     onChange({name: 'firstName',value});
-    // }}
+     error={errors.firstName || error?.first_name?.[0]}
+     onChangeText={(value)=>{
+         onChange({name: 'firstName',value});
+     }}
     
     />
     
@@ -44,20 +44,20 @@ const RegisterComponent=({ onSubmit,onChange,form,loading,error,errors}) =>{
     label="Last Name"
     iconPosition="right"
     placeholder="Enter Last name"
-    // error={errors.lastName || error?.last_name?.[0]}
-    // onChangeText={(value)=>{
-    //     onChange({name: 'lastName',value});
-    
+     error={errors.lastName || error?.last_name?.[0]}
+     onChangeText={(value)=>{
+     onChange({name: 'lastName',value});
+     }}
     />
     
     <Input
     label="Email"
     iconPosition="right"
     placeholder="Enter Email"
-    // error={errors.email || error?.email?.[0]}
-    // onChangeText={(value)=>{
-    //     onChange({name: 'email',value});
-    // }}
+     error={errors.email || error?.email?.[0]}
+     onChangeText={(value)=>{
+    onChange({name: 'email',value});
+     }}
     />
      <Input
     label="Password"
@@ -65,10 +65,10 @@ const RegisterComponent=({ onSubmit,onChange,form,loading,error,errors}) =>{
     secureTextEntry={true}
     icon={<Text>Show</Text>}
     iconPosition="right"
-    // error={errors.password || error?.password?.[0]}
-    // onChangeText={(value)=>{
-    //     onChange({name: 'password',value});
-    // }}
+     error={errors.password || error?.password?.[0]}
+     onChangeText={(value)=>{
+         onChange({name: 'password',value});
+     }}
     />
     <CustomButton loading={loading} onPress={onSubmit} disabled={loading} primary title="Submit"/>
 
