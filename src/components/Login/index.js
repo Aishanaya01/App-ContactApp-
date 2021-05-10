@@ -6,6 +6,7 @@ import CustomButton from '../../components/common/CustomButton';
 import Input from '../../components/common/Input';
 import { REGISTER } from '../../constants/routeNames';
 import styles from './styles';
+import Message from '../../components/common/Message';
 
 const LoginComponent=()=>{
     const {navigate}=useNavigation();
@@ -16,17 +17,38 @@ const LoginComponent=()=>{
             <View>
                 <Text style={styles.title}>Welcome to  AS Contacts</Text>
                 <Text style={styles.subTitle}>Please Login Here</Text>
-           
+
+                <Message 
+                retry
+                retryFn={()  => {
+                    console.log('222','111');
+                }} 
+                 primary
+                 onDismiss ={ ()=> {}}
+                  message="                                   invalid credential "/>
+                <Message 
+                danger
+                
+                onDismiss ={ ()=> {}}
+                message="                                 invalid credential"/>
+                <Message info
+                onDismiss ={ ()=> {}}
+                message="                                 invalid credential"/>
+                <Message 
+                success
+                onDismiss ={ ()=> {}}
+                 message="                                invalid credential"/>
            <View style={styles.form}>
             <Input
     label="Username"
     iconPosition="right"
     placeholder="Enter Username"
-    //error={'This feild is required'}
+    error={'This feild is required'}
     />
      <Input
     label="Password"
     placeholder="Enter Password"
+    error={'This feild is required'}
     secureTextEntry={true}//password not shown 
     icon={<Text>Show</Text>}
     iconPosition="right"

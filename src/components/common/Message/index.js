@@ -6,7 +6,7 @@ import {View, Text, TextInput, ActivityIndicator} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {color} from 'react-native-reanimated';
 import colors from '../../../assets/theme/colors';
-import styles from './styles';
+ import styles from './styles';
 
 const Message = ({
   message,

@@ -76,9 +76,9 @@ useFocusEffect(
         return {...prev,lastName:"Please add a lastname"}
       })
     }
-    if(!form.emailName){
+    if(!form.email){
       setErrors(prev=>{
-        return {...prev,emailName:"Please add a email"}
+        return {...prev,email:"Please add a email"}
       })
     }
     if(!form.password){
