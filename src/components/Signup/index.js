@@ -19,6 +19,17 @@ const RegisterComponent=({ onSubmit,onChange,form,loading,error,errors}) =>{
                 <Text style={styles.subTitle}>Create Free Account</Text>
            
            <View style={styles.form}>
+               {error?.error &&(
+               <Message
+               retry
+               danger
+               retryFn={()  => {
+                console.log('222','111');
+            }} 
+            Message={error?.error}
+            />
+               )}
+               
          {error?.error && <Text>{error.error}</Text>}
     <Input
     label="Username"

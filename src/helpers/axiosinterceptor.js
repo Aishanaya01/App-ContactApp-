@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-// import axios from "axios";
-import envs from "../config/env";
+ import axios from "axios";
+ import envs from "../config/env";
 
 let headers ={};
 

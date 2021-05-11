@@ -1,5 +1,5 @@
 import { REGISTER_LOADING,REGISTER_FAIL,REGISTER_SUCCESS,CLEAR_AUTH_STATE } from "../../../constants/actionTypes";
- import axiosInstance from "../../../helpers/axiosinterceptor"
+ import axiosInstance from "../../../helpers/axiosinterceptor";
 export const clearAuthState=()=>dispatch=>{
 
     dispatch({
@@ -36,5 +36,5 @@ export default({
             payload: err.response ? err.response.data : {error: 'Something went wrong'},
     
     });
-    });
+  });
 };

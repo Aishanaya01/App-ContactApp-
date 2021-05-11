@@ -1,14 +1,11 @@
 import React from 'react';
-
 import { useNavigation } from '@react-navigation/core';
 import {useFocusEffect} from '@react-navigation/native';
-import  { useContext, useEffect, useState } from 'react';
+import  { useContext , useState } from 'react';
 import { GlobalContext } from '../../context/Provider';
 import { LOGIN } from '../../constants/routeNames';
 import  register, { clearAuthState } from '../../context/actions/auth/register';
 import RegisterComponent from '../../components/Signup';
-// import envs from '../../config/env';
-// import axios from '../../helpers/axiosinterceptor';
 const Register=()=>{
   const [form, setForm] = useState({});
   const {navigate} = useNavigation();
@@ -17,19 +14,18 @@ const {authDispatch,
   authState:{error,loading,data},
 } = useContext(GlobalContext);
 
-React.useEffect(()=>{
-  if(data){
-    navigate(LOGIN);
-  }
-},[data]);
 
 useFocusEffect(
-  React.useCallback(()=>{
-    if(data || error){
-      clearAuthState()(authDispatch);
-    }
-  },[data, error]),
-)
+  React.useCallback(() => {
+    return () => {
+      // it shows the error like something went wrong , try again
+        if (data || error) {
+         clearAuthState()(authDispatch);
+       }
+    
+    };
+  }, [data, error]),
+);
 
 
 
