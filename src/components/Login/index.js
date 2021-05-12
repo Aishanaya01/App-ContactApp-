@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/core';
 import React from 'react'
-import {View,Text,TextInput,Image, TouchableOpacity } from 'react-native';
+import {View,Text,Image, TouchableOpacity } from 'react-native';
 
 import Container from '../../components/common/Container';
 import CustomButton from '../../components/common/CustomButton';
@@ -9,9 +9,9 @@ import { REGISTER } from '../../constants/routeNames';
 import styles from './styles';
 import Message from '../../components/common/Message';
 
-const LoginComponent=()=>{
+const LoginComponent=(error, onChange , onSubmit, loading)=>{
     const {navigate}=useNavigation();
-    return(
+    return (
         <Container>
             <Image height="40" width="40" source={require('../../assets/images/logo.png')} style={styles.logoImage}/>
 
@@ -19,42 +19,37 @@ const LoginComponent=()=>{
                 <Text style={styles.title}>Welcome to  AS Contacts</Text>
                 <Text style={styles.subTitle}>Please Login Here</Text>
 
-                <Message 
-                retry
-                retryFn={()  => {
-                    console.log('222','111');
-                }} 
-                 primary
-                 onDismiss ={ ()=> {}}
-                  message="                                   invalid credential "/>
-                <Message 
-                danger
-                
-                onDismiss ={ ()=> {}}
-                message="                                 invalid credential"/>
-                <Message info
-                onDismiss ={ ()=> {}}
-                message="                                 invalid credential"/>
-                <Message 
-                success
-                onDismiss ={ ()=> {}}
-                 message="                                invalid credential"/>
+
            <View style={styles.form}>
+           {error && !error.error&&(
+                <Message  onDismiss ={()=> {}} danger  message="invalid credential"/>
+               )}
+           {error?.error && <Message   danger onDismiss Message={error?.error}
+            />
+               }
             <Input
     label="Username"
     iconPosition="right"
     placeholder="Enter Username"
-    error={'This feild is required'}
+    onChangeText={(value)=>{
+         onChange({name: 'userName',value});
+    }}
     />
      <Input
     label="Password"
     placeholder="Enter Password"
-    error={'This feild is required'}
     secureTextEntry={true}//password not shown 
     icon={<Text>Show</Text>}
     iconPosition="right"
+    onChangeText={(value)=>{
+         onChange({name: 'password',value});
+    }}
     />
-    <CustomButton primary title="Submit"/>
+    <CustomButton 
+    disabled={loading}
+    onPress={onSubmit} 
+    loading={loading}
+    primary title="Submit"/>
 <View style={styles.createSection}>
 <Text style={styles.infoText}>Need a new account?</Text>
 <TouchableOpacity onPress={()=>
@@ -67,7 +62,7 @@ const LoginComponent=()=>{
 </View>
     </Container>
 
-    )
+    );
 }
 
 export default LoginComponent;

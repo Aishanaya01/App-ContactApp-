@@ -21,8 +21,7 @@ const RegisterComponent=({ onSubmit,onChange,form,loading,error,errors}) =>{
            <View style={styles.form}>
                {error?.error &&(
                <Message
-               retry
-               danger
+               retry   danger
                retryFn={()  => {
                 console.log('222','111');
             }} 
@@ -30,7 +29,7 @@ const RegisterComponent=({ onSubmit,onChange,form,loading,error,errors}) =>{
             />
                )}
                
-         {error?.error && <Text>{error.error}</Text>}
+         
     <Input
     label="Username"
     iconPosition="right"

@@ -21,7 +21,7 @@ useFocusEffect(
       // it shows the error like something went wrong , try again
         if (data || error) {
          clearAuthState()(authDispatch);
-       }
+       }// these two lines represent to go to the actions > auth > register file in this file it give the msg like something went wrong
     
     };
   }, [data, error]),
