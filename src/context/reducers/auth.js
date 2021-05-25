@@ -18,8 +18,8 @@ const auth =(state,{type,payload})=>{
         case LOGIN_SUCCESS:
         return {
              ...state,
-        loading:false,
-        data:payload,
+        loading : false,
+        data : payload,
         isLoggedIn:true,
         };
 

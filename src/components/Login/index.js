@@ -31,9 +31,9 @@ const LoginComponent=(error, onChange , onSubmit, loading)=>{
     label="Username"
     iconPosition="right"
     placeholder="Enter Username"
-    onChangeText={(value)=>{
-         onChange({name: 'userName',value});
-    }}
+    onChangeText={(value) => {
+    onChange({name: 'userName',value});
+      }}
     />
      <Input
     label="Password"
@@ -41,12 +41,12 @@ const LoginComponent=(error, onChange , onSubmit, loading)=>{
     secureTextEntry={true}//password not shown 
     icon={<Text>Show</Text>}
     iconPosition="right"
-    onChangeText={(value)=>{
-         onChange({name: 'password',value});
-    }}
+    onChangeText={(value)=> {
+    onChange({ name: 'password',value});
+      }}
     />
     <CustomButton 
-    disabled={loading}
+     disabled={loading}
     onPress={onSubmit} 
     loading={loading}
     primary title="Submit"/>
