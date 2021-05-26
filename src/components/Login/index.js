@@ -38,7 +38,7 @@ const LoginComponent=(error, onChange , onSubmit, loading)=>{
      <Input
     label="Password"
     placeholder="Enter Password"
-    secureTextEntry={true}//password not shown 
+    secureTextEntry={true}//password not shown
     icon={<Text>Show</Text>}
     iconPosition="right"
     onChangeText={(value)=> {
